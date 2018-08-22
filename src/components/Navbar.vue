@@ -22,7 +22,7 @@ import { navbar_routes } from "../router";
 <style scoped>
 #navbar{
   overflow: hidden;
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
 }
