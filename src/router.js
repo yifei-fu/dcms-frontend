@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Post from './components/Post'
+import PostView from './views/PostView.vue'
 import Home from './views/Home.vue'
 
 Vue.use(Router)
@@ -23,7 +23,7 @@ var routes = [
   {
     path: '/post/:id',
     name: 'post',
-    component: Post
+    component: PostView
   }
 ]
 

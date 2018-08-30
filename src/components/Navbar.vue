@@ -25,5 +25,6 @@ import { navbar_routes } from "../router";
   position: sticky;
   top: 0;
   width: 100%;
+  z-index: 1000
 }
 </style>
