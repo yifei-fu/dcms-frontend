@@ -3,6 +3,7 @@ import Router from 'vue-router'
 
 import PostView from './views/PostView.vue'
 import Home from './views/Home.vue'
+import PageNotFound from './views/PageNotFound.vue'
 
 Vue.use(Router)
 
@@ -24,6 +25,11 @@ var routes = [
     path: '/post/:id',
     name: 'post',
     component: PostView
+  },
+  // 404 view
+  {
+    path: "*",
+    component: PageNotFound
   }
 ]
 
