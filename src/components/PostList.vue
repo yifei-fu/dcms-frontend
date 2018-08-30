@@ -58,7 +58,4 @@ export default {
 .load-more-button {
   margin-top: 2em;
 }
-a{
-  text-decoration: none;
-}
 </style>
