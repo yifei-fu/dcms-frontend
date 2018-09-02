@@ -7,9 +7,6 @@
       <p>Loading</p>
     </div>
     <div class="content-wrapper">
-      <div v-if="header">
-        <h1>{{header}}</h1>
-      </div>
       <div v-if="data">
         <el-table :data="data" :show-header="false">
           <el-table-column label="Title" align="center">
@@ -30,9 +27,8 @@
 import { fetch_post_list } from "@/api/post";
 
 export default {
-  name: "PostList",
+  name: "Categories",
   props: {
-    header: String,
     query: String
   },
   data() {

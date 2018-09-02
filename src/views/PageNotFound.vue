@@ -6,7 +6,6 @@
 </template>
 
 <script>
-import { fetch_post_list } from "@/api/post";
 
 export default {
   name: "PageNotFound"

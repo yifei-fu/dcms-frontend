@@ -4,6 +4,7 @@
       <el-menu-item v-for="route in navbar_routes" :key="route.id" :index="route.path">
         {{route.name}}
       </el-menu-item>
+      <!-- Authors -->
     </el-menu>
 
   </div>
