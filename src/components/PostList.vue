@@ -1,26 +1,28 @@
 <template>
   <div class="post-list-wrapper">
-    <div v-if="api.status==='error'">
-      <el-alert title="Failed to load post." type="error" show-icon center/>
-    </div>
-    <div v-if="api.status==='loading'">
-      <p>Loading</p>
-    </div>
-    <div class="content-wrapper">
-      <div v-if="header">
-        <h1>{{header}}</h1>
+    <div v-if="api">
+      <div v-if="api.status==='error'">
+        <el-alert title="Failed to load post." type="error" show-icon center/>
       </div>
-      <div v-if="data">
-        <el-table :data="data" :show-header="false">
-          <el-table-column label="Title" align="center">
-            <template slot-scope="scope">
-              <router-link :to="{name:'post', params: {id:scope.row.id}}">{{scope.row.title}}</router-link>
-            </template>
-          </el-table-column>
-        </el-table>
-        <el-button class="load-more-button" round v-if="api.next_url" :loading="api.status==='loading'" @click="api.get_next()">
-          {{api.status!=='loading'?"Load more":"Loading"}}
-        </el-button>
+      <div v-if="api.status==='loading'">
+        <p>Loading</p>
+      </div>
+      <div class="content-wrapper">
+        <div v-if="header">
+          <h1>{{header}}</h1>
+        </div>
+        <div v-if="data">
+          <el-table :data="data" :show-header="false">
+            <el-table-column label="Title" align="center">
+              <template slot-scope="scope">
+                <router-link :to="{name:'post', params: {id:scope.row.id}}">{{scope.row.title}}</router-link>
+              </template>
+            </el-table-column>
+          </el-table>
+          <el-button class="load-more-button" round v-if="api.next_url" :loading="api.status==='loading'" @click="api.get_next()">
+            {{api.status!=='loading'?"Load more":"Loading"}}
+          </el-button>
+        </div>
       </div>
     </div>
   </div>
@@ -33,7 +35,7 @@ export default {
   name: "PostList",
   props: {
     header: String,
-    query: String
+    query: Object
   },
   data() {
     return {
