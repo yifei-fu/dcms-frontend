@@ -10,6 +10,14 @@ npm install
 npm run serve
 ```
 
+### Deploy with Docker and Nginx
+```
+# change the backend API address in src/api/common.js
+npm run build
+docker build -t dcms-frontend-image:v1
+docker run -d dcms-frontend-image:v1
+```
+
 ### Compiles and minifies for production
 ```
 npm run build
